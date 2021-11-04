@@ -8,25 +8,24 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "KinematicBody",
-"class": "Player",
-"language": "GDScript",
-"path": "res://Entities/Player/Player.gd"
-} ]
-_global_script_class_icons={
-"Player": ""
-}
-
 [application]
 
-config/name="Kill Switch"
-run/main_scene="res://Maps/Game.tscn"
-config/icon="res://icon.png"
+config/name="Cover Up"
+run/main_scene="res://Game/Game.tscn"
+config/icon="res://icon2.png"
 
 [autoload]
 
-Global="*res://Entities/Logic/Autoloads/Global.gd"
+Global="*res://Game/Entities/Logic/Autoloads/Global.gd"
+
+[display]
+
+window/size/width=240
+window/size/height=160
+window/size/test_width=1270
+window/size/test_height=700
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 

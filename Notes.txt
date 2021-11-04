@@ -1,0 +1,40 @@
+
+
+Collision Layers:
+	Static - Static objects that block the player or enemies.
+	Dynamic - Moving objects, like a moving car or enemies.
+	Collectible - ex. Health Pack, Armor, and Ammo
+	Player - Can be used to check collision instead of checking for the name.
+	Target - Can be shot at or take damage.
+	Bound - Blocks the camera, only used for walls
+	Trigger - For scripted events, checkpoints, or enemy spawning.
+	Projectile - Enemy bullets
+
+Cover:
+	There are three types of cover, Left Center Right.
+	The left and right are tall covers on the side of the map
+	And the center is a short cover where you have to duck
+	To set which side the CoverSpot corresponds to, after dragging
+	the coverspot scene go to the Script variables and select the Cover Side you want.
+
+	Trivia - If you make a big wall in the middle of the map, you can put two 
+	covers (left and right) on both corners so that the player can take cover on both sides of the wall.
+
+
+Scenes & Folders:
+	The Game scene is where the levels are loaded/unloaded to.
+	Level folders can hold its model/textures and any other assets special for that level. They also hold scenes with entities inside, including the player.
+	The Game scene is where the levels are loaded/unloaded to.
+
+	The player and the UI are seperate scenes. The UI is a child of the Game scene.
+	The player and camera takes input streight from their script.
+
+
+
+
+
+
+
+
+
+
