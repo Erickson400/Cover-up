@@ -1,6 +1,6 @@
 extends Node
 
-#==================Enums==================
+#==================Enums/Consts==================
 enum CoverType{
 	left, # Left side of the level (wall on left)
 	center,

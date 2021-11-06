@@ -28,12 +28,14 @@ func _process(delta):
 		animation_tree.set("parameters/BlendSpace2D/blend_position", vec2D)
 
 func _shooting_pressed():
+	#if animation_tree.get("parameters/Standing/current") == 1:
 	var shootanim = animation_tree.get("parameters/Cover/current") 
 	animation_tree.set("parameters/Cover/current", shootanim + 1) 
 		
 	animation_tree.set("parameters/Standing/current", 1)
 		
 func _shooting_released():
+	#if animation_tree.get("parameters/Standing/current") == 0:
 	var shootanim = animation_tree.get("parameters/Cover/current") 
 	animation_tree.set("parameters/Cover/current", shootanim - 1) 
 	
