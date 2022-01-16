@@ -2,6 +2,7 @@ extends Node
 
 #==================Variables==================
 var direction_Strength:Vector3
+var active = true
 
 #==================Signals==================
 signal sgn_Left_Click_Pressed
@@ -16,6 +17,8 @@ signal sgn_Space_Key_Pressed
 
 #==================Unhandled Input Check==================
 func _unhandled_input(event):
+	if not active: return
+	
 	if event.is_action_pressed("left_click"):
 		emit_signal("sgn_Left_Click_Pressed")
 	if event.is_action_pressed("right_click"):

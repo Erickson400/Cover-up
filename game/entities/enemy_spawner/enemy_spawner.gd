@@ -1,7 +1,7 @@
 extends Spatial
 
 #============Variables================
-var enemy_scn = preload("res://Game/Entities/Enemy/Enemy.tscn")
+var enemy_scn = preload("res://game/entities/enemy/enemy.tscn")
 var spawn_running_speed = 4
 
 #============Public Functions================

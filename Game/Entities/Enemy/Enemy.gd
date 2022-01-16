@@ -26,7 +26,9 @@ func init(dir:Vector3):
 
 
 #==================Private Functions==================
+# warning-ignore:unused_argument
 func _process(delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(active_direction*speed, Vector3.UP)
 
 

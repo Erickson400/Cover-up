@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game/Entities/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Game/Entities/Player/Input.gd" type="Script" id=2]
+[ext_resource path="res://game/entities/player/input.gd" type="Script" id=1]
+[ext_resource path="res://game/entities/player/player.gd" type="Script" id=2]
 [ext_resource path="res://Game/Entities/Player/Model/Zach.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CylinderShape" id=1]
@@ -17,14 +17,14 @@ size = Vector3( 1, 3, 1 )
 ]]
 collision_layer = 8
 collision_mask = 87
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Input" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="MeshPivot" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

@@ -8,10 +8,20 @@ var cover_area_position = Vector3.ZERO
 var cover_side = Global.CoverType.center
 
 #--Private
-var covered = false
 onready var animation_tree = $MeshPivot/Zach/AnimationTree
+var covered = false
+
+var rotating_magnitude = 5 # does not include the camera
+onready var facing_angle = rotation.y
 
 #================Public Functions==============
+func turn(side):
+	match side:
+		Global.TurnSide.right:
+			facing_angle -= PI/2
+		Global.TurnSide.left:
+			facing_angle += PI/2	
+
 #===================Private Functions================
 func _ready():
 	$Input.connect("sgn_Space_Key_Pressed", self, "_toggle_cover")
@@ -19,10 +29,15 @@ func _ready():
 	$Input.connect("sgn_Left_Click_Released", self, "_shooting_released")
 
 func _process(delta):
+	# Lerp to facing direction
+	rotation.y = lerp(rotation.y, facing_angle, rotating_magnitude*delta)
+	
+	# Lock the player if in cover
 	if covered:
 		global_transform.origin = global_transform.origin.linear_interpolate(cover_area_position, 2*delta)
 	else:
-		var move_direction = $Input.direction_Strength.normalized()
+		var move_direction:Vector3 = $Input.direction_Strength.normalized()
+		move_direction = move_direction.rotated(Vector3.UP, rotation.y)
 		move_and_slide(move_direction*Speed, Vector3.UP)
 		var vec2D = Vector2(move_direction.x, move_direction.z)
 		animation_tree.set("parameters/BlendSpace2D/blend_position", vec2D)

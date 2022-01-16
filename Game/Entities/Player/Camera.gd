@@ -12,19 +12,21 @@ signal sgn_shoot_start
 signal sgn_shoot_end
 
 #================Public Functions==============
-func switch_direction(new_angle):
-	rotation_degrees.y = new_angle
-
 #================Private Functions==============
 func _process(delta):
 	# Smoothly move the camera towards the player
 	var lerp_speed = 4
 	var move_direction:Vector3 = Vector3.ZERO
 	if player:
+		
+		
 		move_direction = get_node(player).global_transform.origin - global_transform.origin
 	else:
 		move_direction = self.global_transform.origin
 	move_and_slide(move_direction*lerp_speed, Vector3.UP)
+	
+	# Make the camera face the same direction as the player
+	rotation = lerp(rotation, get_node(player).rotation, 0.8*delta)
 	
 	# Raycast
 	var ray_length = 1000

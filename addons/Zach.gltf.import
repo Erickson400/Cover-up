@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Zach.gltf-5e0207f0d6c9b3cf11cad696b6d46495.scn"
+path="res://.import/Zach.gltf-9f6ea82ac76ea5b92dfed613149fb3c0.scn"
 
 [deps]
 
-source_file="res://game/entities/player/model/Zach.gltf"
-dest_files=[ "res://.import/Zach.gltf-5e0207f0d6c9b3cf11cad696b6d46495.scn" ]
+source_file="res://addons/Zach.gltf"
+dest_files=[ "res://.import/Zach.gltf-9f6ea82ac76ea5b92dfed613149fb3c0.scn" ]
 
 [params]
 
@@ -28,9 +28,9 @@ meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
-animation/fps=30.0
+animation/fps=15
 animation/filter_script=""
-animation/storage=1
+animation/storage=false
 animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05

@@ -7,6 +7,12 @@ enum CoverType{
 	right # Right side of the level (wall on right)
 }
 
+enum TurnSide{
+	left,
+	right	
+}
+
+
 func _ready():
 	OS.window_fullscreen = false
 	Engine.target_fps = 20
